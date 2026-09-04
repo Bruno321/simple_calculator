@@ -1,0 +1,25 @@
+Inspect both the existing `backend` and `frontend` first and follow the current architecture, naming, validation, testing, and UI patterns already used in the project.
+
+Add subtraction end-to-end.
+
+Backend:
+- Add `POST /subtraction`.
+- Reuse the existing `{ "operands": [...] }` request model.
+- Require at least 2 operands.
+- Evaluate strictly left-to-right.
+- Example: `[10, 4, 2]` => `(10 - 4) - 2 = 4`.
+- Keep subtraction logic in the calculator service, HTTP concerns in the handler, and reuse the existing domain/error/response patterns.
+- Add service and HTTP tests consistent with the current test architecture.
+
+Frontend:
+- Add subtraction using the same multi-operand interaction model as addition, multiplication, and division.
+- Once subtraction is selected, only subtraction may continue for that expression.
+- Support both keyboard and keypad input.
+- Send the payload expected by the new backend endpoint.
+
+Keypad layout:
+- Put the subtraction `-` button in the keypad slot currently occupied by the delete/backspace button.
+- The delete/backspace control currently spans two grid cells; change it so it occupies only one cell, using the remaining cell for subtraction.
+- Preserve the existing behavior and styling rules for `AC`, delete/backspace, `=`, disabled operators, loading, and validation.
+
+Update the frontend README/API documentation if subtraction is listed anywhere, and make sure all backend and frontend tests/builds still pass.
