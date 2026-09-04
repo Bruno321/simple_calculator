@@ -1,0 +1,6 @@
+[submodule "backend"]
+	path = backend
+	url = https://github.com/Bruno321/simple_calculator_backend.git
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/Bruno321/simple_calculator_frontend.git
